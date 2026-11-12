@@ -1,0 +1,10 @@
+{
+  "name": "code-audit-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tiny intentionally vulnerable Express-less Node service used as the plugin smoke-test target.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

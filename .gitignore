@@ -1,0 +1,42 @@
+# Cursor / editors
+.cursor/
+**/.cursor/
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials.json
+credentials*.json
+secrets.json
+github-key
+github-key.txt
+
+# Local databases and audit runtime data
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+.codeaudit/
+data/
+uploads/
+*.zip
+
+# Logs
+*.log
+npm-debug.log*

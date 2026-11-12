@@ -1,0 +1,51 @@
+# Code Audit Console bundle patch. The row id is stable: profile overrides target it.
+# Every value below is a default; runtime settings (Settings page) take precedence.
+- insert:
+    - id: code-audit
+      name: '@local/code-audit'
+      config:
+        enabled: true
+
+        # Persistent data root. Empty means ${DSH_HOME}/codeaudit.
+        dataDir: ''
+        # Loopback-only HTTP surface by default. Set true to accept remote peers.
+        allowRemote: false
+
+        # Subagent backend registered on ctx.subagents.
+        subagentProvider: spawn
+        # Optional model override in "provider:model" form. Empty follows the DSH default model.
+        modelOverride: ''
+        # Add the console/tool paragraph to the system prompt.
+        promptSection: true
+
+        # Master switch and protection mode.
+        globalEnabled: true
+        protectPages: false
+
+        # Concurrency (guide defaults; audit capped at 10, lanes capped at 8 by DSH trees).
+        maxConcurrentAudit: 5
+        maxConcurrentVerify: 5
+        maxConcurrentEnv: 5
+        maxConcurrentChildren: 24
+        laneConcurrency: 8
+        laneBatchSize: 10
+        dedupeThreshold: 15
+
+        # Timeouts in milliseconds.
+        stageTimeoutMs: 5400000
+        idleTimeoutMs: 1500000
+        verifyTimeoutMs: 900000
+        verifyIdleTimeoutMs: 300000
+        finishGraceMs: 120000
+
+        # Stage retries for non-timeout failures.
+        stageRetries: 1
+
+        # Import limits (large archives are supported on purpose).
+        maxUploadBytes: 8589934592
+        maxExtractBytes: 21474836480
+        maxExtractFiles: 200000
+
+        # Verification extras.
+        historyMaxVersions: 3
+        monitorIntervalMin: 30

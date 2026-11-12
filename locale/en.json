@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Code audit",
+    "description": "Local multi-agent source-code audit console: upload or clone a repository, watch the audit and target verification flow live, and collect findings and reports."
+  }
+}
